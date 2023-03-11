@@ -104,3 +104,5 @@ app.get('/getalbums', function(req, res){
   });
   
 });
+
+app.listen(process.env.PORT);
