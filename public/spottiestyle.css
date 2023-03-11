@@ -86,6 +86,10 @@ img:hover {
   text-align: center;
 }
 
+#logged-in {
+	display:none;
+}
+
 #image-grid {
 	background-position: center;
 	padding: 20px;

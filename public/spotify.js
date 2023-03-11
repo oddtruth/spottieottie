@@ -26,7 +26,7 @@
           if (logged_in) {
             // show the generate image button and everything else.
           	$('#login').hide();
-        	$('#logged-in').show();
+        	  $('#logged-in').show();
           } else {
               // render initial screen
               $('#login').show();
