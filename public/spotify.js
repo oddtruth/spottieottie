@@ -42,11 +42,8 @@
               //hide the generate button
               $('.generate').hide();
               // put the list elements and the image container elements into a variable
-              console.log('testing! response');
               imgContainerElements = document.getElementsByClassName('img-container');
               //place the track names on top of each image in the image containers. also assign each span a track number attribute
-              console.log(imgContainerElements.length);
-              console.log(response['body']['items'])
               for (var i = 0; i < imgContainerElements.length; i++) {
               	imgContainerElements[i].getElementsByTagName('span')[0].innerHTML = response['body']['items'][i]['name'];
               	imgContainerElements[i].getElementsByTagName('span')[0].setAttribute('track-number', i);

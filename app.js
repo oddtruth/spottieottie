@@ -7,7 +7,6 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var fs = require('fs');
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
@@ -53,7 +52,6 @@ app.get('/login', function(req, res) {
     }));
 });
 
-
 app.get('/callback', function(req, res) {
   var code = req.query.code || null;
   // GET AUTH ATTRIBUTES TOGETHER FOR THE REQUEST
@@ -83,7 +81,6 @@ app.get('/callback', function(req, res) {
         logged_in: true,
       }));
 
-
     } else {
          res.redirect('/#' +
            querystring.stringify({
@@ -93,7 +90,6 @@ app.get('/callback', function(req, res) {
   });
   
 });
-
 
 app.get('/getalbums', function(req, res){
   var access_token = req.cookies.access_token;
@@ -108,6 +104,3 @@ app.get('/getalbums', function(req, res){
   });
   
 });
-
-console.log('Listening on 8888');
-app.listen(8888);
