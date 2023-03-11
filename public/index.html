@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spotify Top Songs Login</title>
+	<link rel="stylesheet" type="text/css" href="spottiestyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<div class="page-title">
+		<h1>Spotify Album Art Art Maker</h1>
+	</div>
+	<div id="login">
+		<div>
+			<a href="/login" class="btn-submit" id="login-button">Log in to Spotify</a>
+		</div>
+	</div>
+
+	<div id="logged-in">
+		<div class="generate">
+			<div>
+				<a href="#" class="btn-submit" id="generate-image">Generate Image</a>
+			</div>
+		</div>
+
+		<div id="image-grid-container">
+			<div id="image-grid">
+				<div class="column">
+					<div class="row">
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+					</div>		
+					<div class="row">
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+						<div class="img-container">
+							<img src="">
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id='player-container'>
+			<div id='player'>
+				<iframe id=iframe-player style="border-radius:12px" src="https://open.spotify.com/embed/track/0EYxr62cSeDetJKoIBaPbq?utm_source=generator" width="30%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+			</div>
+		</div>
+	</div>
+
+	<script src="spotify.js"></script>
+</body>
+<footer id=info-footer>
+	<ul id=footer-list>
+		<li>twitter</li>
+		<li>instagram</li>
+		<li>linkedin</li>
+	</ul>
+	
+</footer>
+</html>
