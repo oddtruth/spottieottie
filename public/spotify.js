@@ -39,6 +39,8 @@
               url: '/getalbums'
             }).done(function(response) {
               //after request is made, do the following with the response:
+              //hide the generate button
+              $('.generate').hide();
               // put the list elements and the image container elements into a variable
               console.log('testing! response');
               imgContainerElements = document.getElementsByClassName('img-container');
