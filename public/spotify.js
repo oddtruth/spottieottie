@@ -43,37 +43,35 @@
               $('.generate').hide();
               // put the list elements and the image container elements into a variable
               imgContainerElements = document.getElementsByClassName('img-container');
-              //place the track names on top of each image in the image containers. also assign each span a track number attribute
+              gridElements = document.getElementById('image-grid').getElementsByTagName('img');
+              //place the track names on top of each image in the image containers. also assign each image a track number attribute
               for (var i = 0; i < imgContainerElements.length; i++) {
               	imgContainerElements[i].getElementsByTagName('span')[0].innerHTML = response['body']['items'][i]['name'];
-              	imgContainerElements[i].getElementsByTagName('span')[0].setAttribute('track-number', i);
+              	gridElements[i].setAttribute('track-number', i);
               }
 
-              //populate the image containers with the actual images
-              gridElements = document.getElementById('image-grid').getElementsByTagName('img');
+              //populate the image containers with the actual images and link the tracks to the image
               for (var i = 0; i < gridElements.length; i++) {
+                //set image element url to album art
               	albumImageURL = response['body']['items'][i]['album']['images'][1]['url'];
               	gridElements[i].setAttribute("src", albumImageURL);
-              }
-
-              //add event listeners for each trackname for when it's clicked. this utilizes the tracknumber value
-              for (var i = 0; i < imgContainerElements.length; i++) {
+                //add track url to urlList to be retrived later
                 trackId = response['body']['items'][i]['id'];
-               	embedURL = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
-               	embedUrlList.push(embedURL);
-                imgContainerElements[i].getElementsByTagName('span')[0].addEventListener('click', function() {
-                	trackNumber = this.getAttribute('track-number');
-                	document.getElementsByTagName('iframe')[0].setAttribute('src', embedUrlList[trackNumber]);
+                embedURL = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
+                embedUrlList.push(embedURL);
 
-                	$('#iframe-player').show();
-        			setTimeout( function() {
-        				const spotifyEmbedWindow = document.querySelector('iframe[src*="spotify.com/embed"]').contentWindow;
-						spotifyEmbedWindow.postMessage({command: 'toggle'}, '*');
-        			}, 2000);
+                //add click event on image element to set iframe track url to the url for the track on the image
+                gridElements[i].addEventListener('click', function() {
+                  trackNumber = this.getAttribute('track-number');
+                  document.getElementsByTagName('iframe')[0].setAttribute('src', embedUrlList[trackNumber]);
 
-
-
+                  $('#iframe-player').show();
+                  setTimeout( function() {
+                    const spotifyEmbedWindow = document.querySelector('iframe[src*="spotify.com/embed"]').contentWindow;
+                    spotifyEmbedWindow.postMessage({command: 'toggle'}, '*');
+                  }, 2000);
                 })
+
               }
 
               $('#image-grid').show();
