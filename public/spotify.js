@@ -44,10 +44,10 @@
               // put the list elements and the image container elements into a variable
               imgContainerElements = document.getElementsByClassName('img-container');
               gridElements = document.getElementById('image-grid').getElementsByTagName('img');
-              //place the track names on top of each image in the image containers. also assign each image a track number attribute
+              //place the track names on top of each image in the image containers. also assign each imagecontainer a track number attribute
               for (var i = 0; i < imgContainerElements.length; i++) {
               	imgContainerElements[i].getElementsByTagName('span')[0].innerHTML = response['body']['items'][i]['name'];
-              	gridElements[i].setAttribute('track-number', i);
+              	imgContainerElements[i].setAttribute('track-number', i);
               }
 
               //populate the image containers with the actual images and link the tracks to the image
@@ -60,8 +60,8 @@
                 embedURL = "https://open.spotify.com/embed/track/" + trackId + "?utm_source=generator&theme=0";
                 embedUrlList.push(embedURL);
 
-                //add click event on image element to set iframe track url to the url for the track on the image
-                gridElements[i].addEventListener('click', function() {
+                //add click event on imagecontainer element to set iframe track url to the url for the track on the image
+                imgContainerElements[i].addEventListener('click', function() {
                   trackNumber = this.getAttribute('track-number');
                   document.getElementsByTagName('iframe')[0].setAttribute('src', embedUrlList[trackNumber]);
 

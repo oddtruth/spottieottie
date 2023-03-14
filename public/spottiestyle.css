@@ -23,6 +23,7 @@ body {
 .img-container{
 	position:relative;
  	text-align:center;
+    cursor: pointer;
 } 
 
 .img-container:hover img {
@@ -42,7 +43,6 @@ body {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    cursor: pointer;
 }
 
 .img-container:hover span {
