@@ -9,6 +9,6 @@ The site works on both desktop and mobile, but it operates a little better on de
 
 The application may not work with all spotify usernames/emails yet, because it's in development mode and hasn't been granted an extension request by spotify. To have your spotify username or email added to work with the app, contact me at tiyiewuare777@gmail.com and let me know your spotify username or email address. Once it's added, the application should work for you!
 
-The website URL: spotifynine.cyclic.app
+The website URL: https://spotifynine.cyclic.app
 
 Thanks!
